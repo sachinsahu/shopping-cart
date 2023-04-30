@@ -1,0 +1,29 @@
+<section class="products">
+    <div class="container">
+      <div class="row">
+        <h2>Products</h2>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#" routerLink="/home">Home</a></li>
+            <li class="breadcrumb-item" aria-current="page">Products</li>
+          </ol>
+        </nav>
+        <div
+          class="col-xs-12 col-sm-6 col-md-3"
+          *ngFor="let product of (productList$ | async).products"
+        >
+          <div class="card">
+            <img [src]="product.thumbnail" class="card-img-top" />
+  
+            <div class="card-body">
+              <h5 class="card-title">{{ product.title }}</h5>
+              <p class="card-text">
+                {{product.description}}
+              </p>
+              <a href="#" [routerLink]="['details',product.id]" class="btn btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

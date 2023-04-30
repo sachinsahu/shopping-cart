@@ -1,0 +1,64 @@
+<section class="cart">
+  <div class="container">
+    <h3>Cart</h3>
+    <div class="row" *ngIf="(productList$ | async).items?.length > 0">
+      <div class="col-8">
+        <div class="col-12 clearfix mb-3">
+          <button type="button" (click)="deleteAllItems()" class="btn btn-danger float-end">
+            Delete All Items
+          </button>
+        </div>
+        <div
+          class="card mb-2"
+          *ngFor="let item of (productList$ | async).items; let i=index;"
+        >
+          <div class="card-body">
+            <div class="row">
+              <div class="col-3">
+                <img src="{{ item.thumbnail }}" class="img-fluid" />
+              </div>
+              <div class="col-9">
+                
+                <ul class="list-unstyled p-details">
+                  <li><span>Name:</span> {{ item.title }}</li>
+                  <li><span>Price:</span> ${{ item.price }}</li>
+                  <li><span>Description:</span> {{ item.description }}</li>
+                </ul>
+                <button type="button" (click)="deleteItem(item)" class="btn btn-danger btn-sm float-start" title="Delete">
+                  <fa-icon [icon]="faRemove"></fa-icon>
+                </button>
+                <button type="button" (click)="deleteItem(item)" class="btn btn-danger btn-sm float-start ms-2" title="Share">
+                  <fa-icon [icon]="faShareNodes"></fa-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card mt-5">
+          <div class="card-body">
+            <h5 class="card-title">Total</h5>
+            <hr/>
+            <ul class="list-unstyled p-details">
+              <li><span>Item Count:</span> {{ itemCount }}</li>
+              <li><span>Total Price:</span> ${{ totalPrice }}</li>
+            </ul>
+            <hr/>
+            <div class="d-grid gap-2">
+            <a href="#" class="btn btn-success btn-lg">Payment</a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="alert alert-warning"
+      role="alert"
+      *ngIf="(productList$ | async).items?.length == 0"
+    >
+      Cart is empty! Please add some product
+    </div>
+  </div>
+</section>

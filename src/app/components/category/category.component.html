@@ -1,0 +1,14 @@
+<section class="categories container-fluid">
+  <ul class="list-item" *ngIf="productCategories">
+    <li
+      *ngFor="
+        let category of (productCategories | async).products | slice : 0 : 10;
+        let i = index
+      "
+      [routerLink]="['/products', category.category]"
+    >
+      <div class="img-container "><img [src]="category.thumbnail" class="img-fluid" /></div>
+      <a href="javascript:void(0)">{{ category.title }}</a>
+    </li>
+  </ul>
+</section>

@@ -1,0 +1,15 @@
+.navbar-collapse {
+  flex-grow: 0;
+  .nav-link{
+    color: #fff;
+    .shoppin-icon{
+      margin-right: 5px;
+    }
+  }
+}
+.bg-light {
+  background-color: #2874f0 !important;
+  .search-box {
+    width: 500px;
+  }
+}

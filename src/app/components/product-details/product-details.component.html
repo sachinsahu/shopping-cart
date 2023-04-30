@@ -1,0 +1,80 @@
+<section class="products">
+  <div class="container">
+    <div class="row">
+      <h2>Product details</h2>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="#" routerLink="/home">Home</a>
+          </li>
+          <li class="breadcrumb-item">Products</li>
+          <li class="breadcrumb-item" aria-current="page">Product Details</li>
+        </ol>
+      </nav>
+      <div
+        class="col-12"
+        *ngFor="let product of (productDetails$ | async).products"
+      >
+        <div class="card">
+          <div class="row">
+            <div class="col-4">
+              <img [src]="product.thumbnail" class="product-img" />
+            </div>
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">{{ product.title }}</h5>
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Price : ${{ product.price }}</li>
+                  <li class="list-group-item">Rating: {{ product.rating }}</li>
+                  <li class="list-group-item">
+                    Discount: {{ product.discountPercentage }}
+                  </li>
+                </ul>
+                <p class="card-text">
+                  {{ product.description }}
+                </p>
+                <h5>Product Images</h5>
+                <ul class="thumbnails">
+                  <li *ngFor="let img of product.images">
+                    <img [src]="img" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="mb-5 ml-5 float-end mr-3">
+                <button type="button" [disabled]="disabled" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addToCart(product);" class="btn btn-warning">
+                  Add to cart
+                </button>
+                &nbsp;&nbsp;
+                <button type="button" href="/add-to-cart" class="btn btn-success">
+                  Buy Now</button
+                >&nbsp;&nbsp;
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-body">
+        <h5>
+        This product has been successfully added to cart. 
+        Please view the cart .
+        </h5>
+      </div>
+      
+    </div>
+  </div>
+</div>
