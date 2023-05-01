@@ -6,6 +6,8 @@ import { Product } from '../model/Product';
   providedIn: 'root',
 })
 export class ApiService {
+  
+  // Added Dummyjson to get the products
   public baseURL = 'https://dummyjson.com/';
   
   constructor(private http: HttpClient) {}

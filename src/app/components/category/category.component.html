@@ -1,4 +1,6 @@
 <section class="categories container-fluid">
+
+  <!-- Product Categories will start from here-->
   <ul class="list-item" *ngIf="productCategories">
     <li
       *ngFor="
@@ -7,7 +9,13 @@
       "
       [routerLink]="['/products', category.category]"
     >
-      <div class="img-container "><img [src]="category.thumbnail" class="img-fluid" /></div>
+      <div class="img-container">
+        <img 
+          [src]="category.thumbnail" 
+          class="img-fluid" 
+          [title]="category.thumbnail" 
+          [alt]="category.thumbnail"/>
+      </div>
       <a href="javascript:void(0)">{{ category.title }}</a>
     </li>
   </ul>

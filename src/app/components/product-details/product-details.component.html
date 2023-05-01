@@ -47,7 +47,7 @@
           <div class="row">
             <div class="col-12">
               <div class="mb-5 ml-5 float-end mr-3">
-                <button type="button" [disabled]="disabled" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addToCart(product);" class="btn btn-warning">
+                <button type="button" [disabled]="disabled" data-bs-toggle="modal" data-bs-target="#productAddedModal" (click)="addToCart(product);" class="btn btn-warning">
                   Add to cart
                 </button>
                 &nbsp;&nbsp;
@@ -63,8 +63,8 @@
   </div>
 </section>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!--Product add confirmation Modal -->
+<div class="modal fade" id="productAddedModal" tabindex="-1" aria-labelledby="productAddedModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       

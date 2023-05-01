@@ -2,6 +2,7 @@
   <div class="container">
     <h3>Cart</h3>
     <div class="row" *ngIf="(productList$ | async).items?.length > 0">
+      <!--Shopping cart list area starts-->
       <div class="col-8">
         <div class="col-12 clearfix mb-3">
           <button type="button" (click)="deleteAllItems()" class="btn btn-danger float-end">
@@ -35,6 +36,8 @@
           </div>
         </div>
       </div>
+
+      <!-- Final payment section starts-->
       <div class="col-4">
         <div class="card mt-5">
           <div class="card-body">
@@ -58,7 +61,7 @@
       role="alert"
       *ngIf="(productList$ | async).items?.length == 0"
     >
-      Cart is empty! Please add some product
+      Your Cart is empty! Please add some product
     </div>
   </div>
 </section>
