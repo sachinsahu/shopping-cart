@@ -2,7 +2,7 @@
 
 This is an E-commerce Application whose name is Shopping Mart. User can look in to various categories of products , list of products , product details. User can add them to cart and remvoe them.
 
-Shopping Mart Angular Application is utilizes the Dummy APi to get the product list , Store them in the ngRx Store, Basic tests are added to verify the Unit testing of the fuctionality using Karma. 
+Shopping Mart Angular Application is utilizes the Dummy APi to get the product list , Store them in the ngRx Store, Karma Unit Testing is added to verify the fuctionality. 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
